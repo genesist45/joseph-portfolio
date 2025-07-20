@@ -1,0 +1,207 @@
+<section id="contact" class="contact-section">
+    <div class="section-header fade-in">
+        <span class="section-subtitle">Get In Touch</span>
+        <h2 class="section-title">Contact Me</h2>
+    </div>
+    <div class="contact-content">
+        <div class="contact-info slide-in-left">
+            <div class="contact-heading">
+                <h3>Let's Talk About Your Project</h3>
+                <p>I'm always open to discussing new projects, creative ideas or opportunities to be part of your vision.</p>
+            </div>
+            <div class="contact-details">
+                <div class="contact-item fade-in delay-100">
+                    <div class="contact-icon">
+                        <i>📧</i>
+                    </div>
+                    <div class="contact-text">
+                        <h4>Email</h4>
+                        <p>theinvokerparamore@gmail.com</p>
+                    </div>
+                </div>
+                <div class="contact-item fade-in delay-200">
+                    <div class="contact-icon">
+                        <i>📱</i>
+                    </div>
+                    <div class="contact-text">
+                        <h4>Phone</h4>
+                        <p>+123 456 7890</p>
+                    </div>
+                </div>
+                <div class="contact-item fade-in delay-300">
+                    <div class="contact-icon">
+                        <i>📍</i>
+                    </div>
+                    <div class="contact-text">
+                        <h4>Location</h4>
+                        <p>Manila, Philippines</p>
+                    </div>
+                </div>
+            </div>
+            <div class="social-links fade-in delay-400">
+                <a href="#" class="social-link">LinkedIn</a>
+                <a href="#" class="social-link">GitHub</a>
+                <a href="#" class="social-link">Twitter</a>
+            </div>
+        </div>
+        <form id="contactForm" class="contact-form slide-in-right">
+            <div class="form-group fade-in delay-100">
+                <input type="text" id="name" name="name" placeholder="Your Name" required>
+            </div>
+            <div class="form-group fade-in delay-200">
+                <input type="email" id="email" name="email" placeholder="Your Email" required>
+            </div>
+            <div class="form-group fade-in delay-300">
+                <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
+            </div>
+            <button type="submit" id="submitBtn" class="submit-btn fade-in delay-400">
+                <span id="submitText">Send Message</span>
+                <span id="loadingSpinner" class="loading-spinner" style="display: none;"></span>
+            </button>
+            <div id="toast" class="toast" style="display: none;">
+                <div class="toast-content">
+                    <div id="toastTitle" class="toast-title"></div>
+                    <div id="toastDescription" class="toast-description"></div>
+                </div>
+                <button id="toastClose" class="toast-close">×</button>
+            </div>
+        </form>
+    </div>
+</section>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const contactForm = document.getElementById('contactForm');
+        const submitBtn = document.getElementById('submitBtn');
+        const submitText = document.getElementById('submitText');
+        const loadingSpinner = document.getElementById('loadingSpinner');
+        const toast = document.getElementById('toast');
+        const toastTitle = document.getElementById('toastTitle');
+        const toastDescription = document.getElementById('toastDescription');
+        const toastClose = document.getElementById('toastClose');
+        
+        // Form data state
+        let formData = {
+            name: '',
+            email: '',
+            message: ''
+        };
+        
+        // Track submission state
+        let isSubmitting = false;
+        
+        // Toast function
+        function showToast({ title, description, variant = 'default' }) {
+            toastTitle.textContent = title;
+            toastDescription.textContent = description;
+            toast.className = `toast ${variant}`;
+            toast.style.display = 'flex';
+            
+            // Auto hide after 5 seconds
+            setTimeout(() => {
+                toast.style.display = 'none';
+            }, 5000);
+        }
+        
+        // Close toast on click
+        toastClose.addEventListener('click', () => {
+            toast.style.display = 'none';
+        });
+        
+        // Update form data on input
+        document.getElementById('name').addEventListener('input', (e) => {
+            formData.name = e.target.value;
+        });
+        
+        document.getElementById('email').addEventListener('input', (e) => {
+            formData.email = e.target.value;
+        });
+        
+        document.getElementById('message').addEventListener('input', (e) => {
+            formData.message = e.target.value;
+        });
+        
+        // Form submission handler
+        contactForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            if (!formData.name || !formData.email || !formData.message) {
+                showToast({
+                    title: "Please fill in all fields",
+                    description: "All fields are required to submit the form.",
+                    variant: "destructive"
+                });
+                return;
+            }
+            
+            isSubmitting = true;
+            submitText.style.display = 'none';
+            loadingSpinner.style.display = 'inline-block';
+            submitBtn.disabled = true;
+            
+            try {
+                // Replace this URL with your actual Formspree form ID
+                const response = await fetch("https://formspree.io/f/", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({
+                        name: formData.name,
+                        email: formData.email,
+                        message: formData.message
+                    })
+                });
+                
+                if (response.ok) {
+                    showToast({
+                        title: "Message sent!",
+                        description: "Thank you for your message. I'll get back to you soon."
+                    });
+                    // Reset form
+                    contactForm.reset();
+                    formData = {
+                        name: '',
+                        email: '',
+                        message: ''
+                    };
+                } else {
+                    throw new Error("Failed to send message");
+                }
+            } catch (error) {
+                showToast({
+                    title: "Failed to send message",
+                    description: "There was a problem sending your message. Please try again later.",
+                    variant: "destructive"
+                });
+                console.error("Error sending message:", error);
+            } finally {
+                isSubmitting = false;
+                submitText.style.display = 'inline-block';
+                loadingSpinner.style.display = 'none';
+                submitBtn.disabled = false;
+            }
+        });
+        
+        // Scroll animation
+        const animateOnScroll = () => {
+            const elements = document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right, .scale-in');
+            
+            elements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                
+                // If element is in viewport
+                if (elementPosition < windowHeight - 100) {
+                    element.classList.add('active');
+                }
+            });
+        };
+        
+        // Run once on load
+        animateOnScroll();
+        
+        // Add scroll event listener
+        window.addEventListener('scroll', animateOnScroll);
+    });
+</script>

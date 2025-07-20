@@ -1,0 +1,48 @@
+<section id="home" class="home-section">
+    <div class="hero">
+        <div class="profile-container scale-in">
+            <div class="profile-frame">
+                <img src="assets/img/profile.jpg" alt="Roeverl Gayrama" class="profile-image">
+                <div class="profile-decoration"></div>
+            </div>
+        </div>
+        <div class="hero-content">
+            <span class="hero-greeting fade-in">Hello, I'm</span>
+            <h1 class="fade-in delay-100">Josep Sernicula</h1>
+            <div class="hero-title fade-in delay-200">
+                <span class="hero-title-text">Web Developer & Designer</span>
+                <span class="hero-title-decoration"></span>
+            </div>
+            <p class="hero-description fade-in delay-300">Crafting beautiful, responsive websites with modern technologies</p>
+            <div class="hero-buttons fade-in delay-400">
+                <a href="#contact" class="home-button primary-button">Get in Touch</a>
+                <a href="#projects" class="home-button secondary-button">View My Work</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Scroll animation
+        const animateOnScroll = () => {
+            const elements = document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right, .scale-in');
+            
+            elements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                
+                // If element is in viewport
+                if (elementPosition < windowHeight - 100) {
+                    element.classList.add('active');
+                }
+            });
+        };
+        
+        // Run once on load
+        animateOnScroll();
+        
+        // Add scroll event listener
+        window.addEventListener('scroll', animateOnScroll);
+    });
+</script>

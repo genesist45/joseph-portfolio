@@ -1,0 +1,96 @@
+<section id="projects" class="projects-section">
+    <div class="section-header fade-in">
+        <span class="section-subtitle">My Work</span>
+        <h2 class="section-title">Featured Projects</h2>
+    </div>
+    <div class="projects-grid">
+        <div class="project-card fade-in">
+            <div class="project-img-container scale-in">
+                <div class="project-img-placeholder">
+                    <span class="project-img-icon">🌐</span>
+                </div>
+            </div>
+            <div class="project-content">
+                <div class="project-tags">
+                    <span>HTML</span>
+                    <span>CSS</span>
+                    <span>JavaScript</span>
+                </div>
+                <h3>E-Commerce Website</h3>
+                <p>A fully responsive e-commerce platform with modern UI/UX design, shopping cart functionality, and payment integration.</p>
+                <div class="project-links">
+                    <a href="#" class="project-link">View Demo</a>
+                    <a href="#" class="project-link">Source Code</a>
+                </div>
+            </div>
+        </div>
+        <div class="project-card fade-in delay-200">
+            <div class="project-img-container scale-in delay-200">
+                <div class="project-img-placeholder">
+                    <span class="project-img-icon">📱</span>
+                </div>
+            </div>
+            <div class="project-content">
+                <div class="project-tags">
+                    <span>React</span>
+                    <span>Node.js</span>
+                    <span>MongoDB</span>
+                </div>
+                <h3>Social Media App</h3>
+                <p>A social networking application with real-time messaging, post sharing, and user authentication features.</p>
+                <div class="project-links">
+                    <a href="#" class="project-link">View Demo</a>
+                    <a href="#" class="project-link">Source Code</a>
+                </div>
+            </div>
+        </div>
+        <div class="project-card fade-in delay-400">
+            <div class="project-img-container scale-in delay-400">
+                <div class="project-img-placeholder">
+                    <span class="project-img-icon">📊</span>
+                </div>
+            </div>
+            <div class="project-content">
+                <div class="project-tags">
+                    <span>Vue.js</span>
+                    <span>Firebase</span>
+                    <span>Chart.js</span>
+                </div>
+                <h3>Analytics Dashboard</h3>
+                <p>An interactive dashboard for visualizing and analyzing data with customizable charts and real-time updates.</p>
+                <div class="project-links">
+                    <a href="#" class="project-link">View Demo</a>
+                    <a href="#" class="project-link">Source Code</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="more-projects fade-in delay-500">
+        <a href="#contact" class="more-projects-btn">Interested in working together? Contact me!</a>
+    </div>
+</section>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Scroll animation
+        const animateOnScroll = () => {
+            const elements = document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right, .scale-in');
+            
+            elements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                
+                // If element is in viewport
+                if (elementPosition < windowHeight - 100) {
+                    element.classList.add('active');
+                }
+            });
+        };
+        
+        // Run once on load
+        animateOnScroll();
+        
+        // Add scroll event listener
+        window.addEventListener('scroll', animateOnScroll);
+    });
+</script>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Josep Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/header.css">
+    <link rel="stylesheet" href="assets/css/home.css">
+    <link rel="stylesheet" href="assets/css/about.css">
+    <link rel="stylesheet" href="assets/css/project.css">
+    <link rel="stylesheet" href="assets/css/contact.css">
+    <link rel="stylesheet" href="assets/css/footer.css">
+</head>
+<body>
+    <!-- Header Component -->
+    <div id="header-component"></div>
+    
+    <!-- Main Content -->
+    <main>
+        <!-- Home Section -->
+        <section id="home">
+            <div id="home-component"></div>
+        </section>
+        
+        <!-- About Section -->
+        <section id="about">
+            <div id="about-component"></div>
+        </section>
+        
+        <!-- Projects Section -->
+        <section id="projects">
+            <div id="project-component"></div>
+        </section>
+        
+        <!-- Contact Section -->
+        <section id="contact">
+            <div id="contact-component"></div>
+        </section>
+    </main>
+    
+    <!-- Footer Component -->
+    <div id="footer-component"></div>
+    
+    <!-- JavaScript for loading components -->
+    <script>
+        // Function to load HTML components
+        function loadComponent(url, elementId) {
+            fetch(url)
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById(elementId).innerHTML = data;
+                });
+        }
+        
+        // Load all components when the page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            loadComponent('components/header.html', 'header-component');
+            loadComponent('components/home.html', 'home-component');
+            loadComponent('components/about.html', 'about-component');
+            loadComponent('components/project.html', 'project-component');
+            loadComponent('components/contact.html', 'contact-component');
+            loadComponent('components/footer.html', 'footer-component');
+        });
+    </script>
+</body>
+</html>

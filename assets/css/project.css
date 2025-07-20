@@ -1,0 +1,334 @@
+/* Projects Section Styles */
+.projects-section {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    padding: 120px 2rem 80px;
+    position: relative;
+    overflow: hidden;
+}
+
+.projects-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 80% 20%, rgba(108, 99, 255, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 20% 80%, rgba(255, 105, 180, 0.05) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 4rem;
+    position: relative;
+}
+
+.section-subtitle {
+    display: inline-block;
+    font-size: 1.1rem;
+    color: #6c63ff;
+    font-weight: 500;
+    margin-bottom: 1rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    position: relative;
+    padding: 0 10px;
+}
+
+.section-subtitle::before,
+.section-subtitle::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 30px;
+    height: 2px;
+    background: linear-gradient(90deg, #6c63ff, transparent);
+    transform: translateY(-50%);
+}
+
+.section-subtitle::before {
+    left: -40px;
+}
+
+.section-subtitle::after {
+    right: -40px;
+    transform: translateY(-50%) rotate(180deg);
+}
+
+.section-title {
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 0.5rem;
+    position: relative;
+}
+
+.projects-grid {
+    max-width: 1200px;
+    margin: 0 auto 3rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    position: relative;
+    z-index: 1;
+}
+
+.project-card {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(15px);
+    border-radius: 16px;
+    overflow: hidden;
+    position: relative;
+    transition: all 0.4s ease;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(108, 99, 255, 0.15);
+    border-color: rgba(108, 99, 255, 0.2);
+}
+
+.project-img-container {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    position: relative;
+}
+
+.project-img-placeholder {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #6c63ff, #ff69b4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.5s ease;
+}
+
+.project-img-icon {
+    font-size: 4rem;
+    color: white;
+}
+
+.project-card:hover .project-img-placeholder {
+    transform: scale(1.05);
+}
+
+.project-content {
+    padding: 1.8rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.project-tags span {
+    background: rgba(108, 99, 255, 0.1);
+    color: #6c63ff;
+    padding: 0.3rem 0.8rem;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.project-card:hover .project-tags span {
+    background: rgba(108, 99, 255, 0.2);
+}
+
+.project-card h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 1rem;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.project-card:hover h3 {
+    color: #6c63ff;
+}
+
+.project-card p {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #666;
+    margin-bottom: 1.5rem;
+    flex: 1;
+}
+
+.project-links {
+    display: flex;
+    gap: 1rem;
+    margin-top: auto;
+}
+
+.project-link {
+    padding: 0.7rem 1.2rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.project-link:first-child {
+    background: linear-gradient(45deg, #6c63ff, #ff69b4);
+    color: white;
+    flex: 1;
+}
+
+.project-link:last-child {
+    background: transparent;
+    color: #6c63ff;
+    border: 1px solid #6c63ff;
+    flex: 1;
+}
+
+.project-link:first-child:hover {
+    box-shadow: 0 5px 15px rgba(108, 99, 255, 0.3);
+    transform: translateY(-2px);
+}
+
+.project-link:last-child:hover {
+    background: rgba(108, 99, 255, 0.1);
+    transform: translateY(-2px);
+}
+
+.more-projects {
+    text-align: center;
+    margin-top: 3rem;
+}
+
+.more-projects-btn {
+    display: inline-block;
+    background: linear-gradient(45deg, #6c63ff, #ff69b4);
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 20px rgba(108, 99, 255, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+.more-projects-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+.more-projects-btn:hover::before {
+    left: 100%;
+}
+
+.more-projects-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(108, 99, 255, 0.3);
+    background: linear-gradient(45deg, #5a52d5, #ff50a5);
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .projects-section {
+        padding: 100px 1rem 60px;
+    }
+    
+    .section-title {
+        font-size: 2.3rem;
+    }
+    
+    .section-subtitle {
+        font-size: 1rem;
+    }
+    
+    .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .project-card h3 {
+        font-size: 1.3rem;
+    }
+    
+    .project-card p {
+        font-size: 0.95rem;
+    }
+    
+    .more-projects-btn {
+        padding: 0.8rem 1.8rem;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .project-img-container {
+        height: 180px;
+    }
+    
+    .project-img-icon {
+        font-size: 3rem;
+    }
+    
+    .project-content {
+        padding: 1.5rem;
+    }
+    
+    .project-card h3 {
+        font-size: 1.2rem;
+        margin-bottom: 0.8rem;
+    }
+    
+    .project-card p {
+        font-size: 0.9rem;
+        margin-bottom: 1.2rem;
+    }
+    
+    .project-links {
+        flex-direction: column;
+        gap: 0.8rem;
+    }
+    
+    .more-projects-btn {
+        padding: 0.7rem 1.5rem;
+        font-size: 0.9rem;
+        width: 100%;
+    }
+}
+
+/* Smooth scrolling offset for fixed header */
+#projects {
+    scroll-margin-top: 80px;
+}

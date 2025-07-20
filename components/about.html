@@ -1,0 +1,88 @@
+<section id="about" class="about-section">
+    <div class="section-header fade-in">
+        <span class="section-subtitle">About Me</span>
+        <h2 class="section-title">Who I Am</h2>
+    </div>
+    <div class="about-content">
+        <div class="about-image-container slide-in-left">
+            <div class="about-image-frame">
+                <img src="assets/img/profile.jpg" alt="Roeverl Gayrama" class="about-image">
+            </div>
+            <div class="experience-badge scale-in delay-300">
+                <span class="experience-number">3+</span>
+                <span class="experience-text">Years of<br>Experience</span>
+            </div>
+        </div>
+        <div class="about-text slide-in-right">
+            <h3 class="fade-in">Web Developer & Designer with a passion for creating beautiful experiences</h3>
+            <p class="fade-in delay-100">Hello! I'm a passionate web developer with experience in creating responsive and user-friendly websites. I love turning ideas into reality through code and design, focusing on both functionality and aesthetics.</p>
+            <div class="about-skills fade-in delay-200">
+                <h4>My Skills</h4>
+                <div class="skills-container">
+                    <div class="skill-item fade-in delay-100">
+                        <div class="skill-info">
+                            <span>HTML5</span>
+                            <span>95%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 95%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item fade-in delay-200">
+                        <div class="skill-info">
+                            <span>CSS3</span>
+                            <span>90%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 90%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item fade-in delay-300">
+                        <div class="skill-info">
+                            <span>JavaScript</span>
+                            <span>85%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 85%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item fade-in delay-400">
+                        <div class="skill-info">
+                            <span>Responsive Design</span>
+                            <span>92%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 92%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a href="#contact" class="about-cta fade-in delay-500">Let's Work Together</a>
+        </div>
+    </div>
+</section>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Scroll animation
+        const animateOnScroll = () => {
+            const elements = document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right, .scale-in');
+            
+            elements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                
+                // If element is in viewport
+                if (elementPosition < windowHeight - 100) {
+                    element.classList.add('active');
+                }
+            });
+        };
+        
+        // Run once on load
+        animateOnScroll();
+        
+        // Add scroll event listener
+        window.addEventListener('scroll', animateOnScroll);
+    });
+</script>
