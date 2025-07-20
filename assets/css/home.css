@@ -37,21 +37,24 @@
 
 /* Profile Image Styling */
 .profile-container {
-    margin-bottom: 2.5rem;
-    position: relative;
-    animation: fadeInUp 1s ease-out 0.2s both;
+    flex-shrink: 0;
+    animation: slowBounce 3s ease-in-out infinite;
 }
 
 .profile-frame {
     position: relative;
-    width: 220px;
-    height: 220px;
-    border-radius: 50%;
-    padding: 8px;
-    background: linear-gradient(45deg, #6c63ff, #ff69b4);
-    box-shadow: 0 10px 25px rgba(108, 99, 255, 0.25);
-    overflow: hidden;
-    transform: rotate(-3deg);
+    width: 300px;
+    height: 300px;
+}
+
+/* Slow Bounce Animation */
+@keyframes slowBounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-8px);
+    }
 }
 
 .profile-frame::before {
@@ -73,6 +76,9 @@
     border-radius: 50%;
     filter: contrast(105%) brightness(102%);
     transition: all 0.5s ease;
+    border: 4px solid transparent;
+    background: linear-gradient(white, white) padding-box,
+                linear-gradient(45deg, #6c63ff, #ff69b4) border-box;
 }
 
 .profile-decoration {
