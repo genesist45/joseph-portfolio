@@ -51,6 +51,10 @@
                 .then(response => response.text())
                 .then(data => {
                     document.getElementById(elementId).innerHTML = data;
+                    // Trigger animation check after loading components
+                    if (elementId === 'footer-component') {
+                        setTimeout(initAnimations, 100);
+                    }
                 });
         }
         
@@ -63,6 +67,30 @@
             loadComponent('components/contact.html', 'contact-component');
             loadComponent('components/footer.html', 'footer-component');
         });
+        
+        // Initialize animations
+        function initAnimations() {
+            // Scroll animation function
+            const animateOnScroll = () => {
+                const elements = document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right, .scale-in');
+                
+                elements.forEach(element => {
+                    const elementPosition = element.getBoundingClientRect().top;
+                    const windowHeight = window.innerHeight;
+                    
+                    // If element is in viewport
+                    if (elementPosition < windowHeight - 100) {
+                        element.classList.add('active');
+                    }
+                });
+            };
+            
+            // Run once on load
+            animateOnScroll();
+            
+            // Add scroll event listener
+            window.addEventListener('scroll', animateOnScroll);
+        }
     </script>
 </body>
 </html>

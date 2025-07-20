@@ -21,28 +21,3 @@
         </div>
     </div>
 </section>
-
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        // Scroll animation
-        const animateOnScroll = () => {
-            const elements = document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right, .scale-in');
-            
-            elements.forEach(element => {
-                const elementPosition = element.getBoundingClientRect().top;
-                const windowHeight = window.innerHeight;
-                
-                // If element is in viewport
-                if (elementPosition < windowHeight - 100) {
-                    element.classList.add('active');
-                }
-            });
-        };
-        
-        // Run once on load
-        animateOnScroll();
-        
-        // Add scroll event listener
-        window.addEventListener('scroll', animateOnScroll);
-    });
-</script>
