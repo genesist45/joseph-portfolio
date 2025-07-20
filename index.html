@@ -281,7 +281,30 @@
         <div class="footer-content">
             <p>&copy; 2025 @joseph. All rights reserved.</p>
         </div>
+        <button id="scroll-top" class="scroll-top" aria-label="Scroll to top">
+            <i class="fas fa-arrow-up"></i>
+        </button>
     </footer>
+
+    <script>
+        // Scroll to top functionality
+        const scrollTopBtn = document.getElementById('scroll-top');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                scrollTopBtn.classList.add('show');
+            } else {
+                scrollTopBtn.classList.remove('show');
+            }
+        });
+
+        scrollTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
     
     <!-- JavaScript for animations and functionality -->
     <script>
