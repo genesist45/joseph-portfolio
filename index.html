@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>document</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/header.css">
@@ -15,53 +15,442 @@
 </head>
 <body>
     <!-- Header Component -->
-    <div id="header-component"></div>
+    <header>
+        <nav class="nav-container">
+            <div class="logo-container">
+                <a href="#home" class="logo-link">
+                    <img src="assets/img/logo.jpg" alt="Logo" class="logo-img">
+                    <span class="logo-text">@angkol</span>
+                </a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#home" class="nav-item"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="#about" class="nav-item"><i class="fas fa-user"></i> About</a></li>
+                <li><a href="#projects" class="nav-item"><i class="fas fa-code"></i> Projects</a></li>
+                <li><a href="#contact" class="nav-item"><i class="fas fa-envelope"></i> Contact</a></li>
+            </ul>
+        </nav>
+        <div class="nav-background-gradient"></div>
+    </header>
     
     <!-- Main Content -->
     <main>
         <!-- Home Section -->
-        <section id="home">
-            <div id="home-component"></div>
+        <section id="home" class="home-section">
+            <div class="hero">
+                <div class="profile-container scale-in">
+                    <div class="profile-frame">
+                        <img src="assets/img/profile.jpg" alt="Roeverl Gayrama" class="profile-image">
+                        <div class="profile-decoration"></div>
+                    </div>
+                </div>
+                <div class="hero-content">
+                    <span class="hero-greeting fade-in">Hello, I'm</span>
+                    <h1 class="fade-in delay-100">Josep Sernicula</h1>
+                    <div class="hero-title fade-in delay-200">
+                        <span class="hero-title-text">Web Developer & Designer</span>
+                        <span class="hero-title-decoration"></span>
+                    </div>
+                    <p class="hero-description fade-in delay-300">Crafting beautiful, responsive websites with modern technologies</p>
+                    <div class="hero-buttons fade-in delay-400">
+                        <a href="#contact" class="home-button primary-button">Get in Touch</a>
+                        <a href="#projects" class="home-button secondary-button">View My Work</a>
+                    </div>
+                </div>
+            </div>
         </section>
         
         <!-- About Section -->
-        <section id="about">
-            <div id="about-component"></div>
+        <section id="about" class="about-section">
+            <div class="section-header fade-in">
+                <span class="section-subtitle">About Me</span>
+                <h2 class="section-title">Who I Am</h2>
+            </div>
+            <div class="about-content">
+                <div class="about-image-container slide-in-left">
+                    <div class="about-image-frame">
+                        <img src="assets/img/profile.jpg" alt="Roeverl Gayrama" class="about-image">
+                    </div>
+                    <div class="experience-badge scale-in delay-300">
+                        <span class="experience-number">3+</span>
+                        <span class="experience-text">Years of<br>Experience</span>
+                    </div>
+                </div>
+                <div class="about-text slide-in-right">
+                    <h3 class="fade-in">Web Developer & Designer with a passion for creating beautiful experiences</h3>
+                    <p class="fade-in delay-100">Hello! I'm a passionate web developer with experience in creating responsive and user-friendly websites. I love turning ideas into reality through code and design, focusing on both functionality and aesthetics.</p>
+                    <div class="about-skills fade-in delay-200">
+                        <h4>My Skills</h4>
+                        <div class="skills-container">
+                            <div class="skill-item fade-in delay-100">
+                                <div class="skill-info">
+                                    <span>HTML5</span>
+                                    <span>95%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 95%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item fade-in delay-200">
+                                <div class="skill-info">
+                                    <span>CSS3</span>
+                                    <span>90%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 90%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item fade-in delay-300">
+                                <div class="skill-info">
+                                    <span>JavaScript</span>
+                                    <span>85%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 85%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item fade-in delay-400">
+                                <div class="skill-info">
+                                    <span>Responsive Design</span>
+                                    <span>92%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 92%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#contact" class="about-cta fade-in delay-500">Let's Work Together</a>
+                </div>
+            </div>
         </section>
         
         <!-- Projects Section -->
-        <section id="projects">
-            <div id="project-component"></div>
+        <section id="projects" class="projects-section">
+            <div class="section-header fade-in">
+                <span class="section-subtitle">My Work</span>
+                <h2 class="section-title">Featured Projects</h2>
+            </div>
+            <div class="projects-grid">
+                <div class="project-card fade-in">
+                    <div class="project-img-container scale-in">
+                        <div class="project-img-placeholder">
+                            <span class="project-img-icon">🌐</span>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-tags">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>JavaScript</span>
+                        </div>
+                        <h3>E-Commerce Website</h3>
+                        <p>A fully responsive e-commerce platform with modern UI/UX design, shopping cart functionality, and payment integration.</p>
+                        <div class="project-links">
+                            <a href="#" class="project-link">View Demo</a>
+                            <a href="#" class="project-link">Source Code</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card fade-in delay-200">
+                    <div class="project-img-container scale-in delay-200">
+                        <div class="project-img-placeholder">
+                            <span class="project-img-icon">📱</span>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-tags">
+                            <span>React</span>
+                            <span>Node.js</span>
+                            <span>MongoDB</span>
+                        </div>
+                        <h3>Social Media App</h3>
+                        <p>A social networking application with real-time messaging, post sharing, and user authentication features.</p>
+                        <div class="project-links">
+                            <a href="#" class="project-link">View Demo</a>
+                            <a href="#" class="project-link">Source Code</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card fade-in delay-400">
+                    <div class="project-img-container scale-in delay-400">
+                        <div class="project-img-placeholder">
+                            <span class="project-img-icon">📊</span>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-tags">
+                            <span>Vue.js</span>
+                            <span>Firebase</span>
+                            <span>Chart.js</span>
+                        </div>
+                        <h3>Analytics Dashboard</h3>
+                        <p>An interactive dashboard for visualizing and analyzing data with customizable charts and real-time updates.</p>
+                        <div class="project-links">
+                            <a href="#" class="project-link">View Demo</a>
+                            <a href="#" class="project-link">Source Code</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="more-projects fade-in delay-500">
+                <a href="#contact" class="more-projects-btn">Interested in working together? Contact me!</a>
+            </div>
         </section>
         
         <!-- Contact Section -->
-        <section id="contact">
-            <div id="contact-component"></div>
+        <section id="contact" class="contact-section">
+            <div class="section-header fade-in">
+                <span class="section-subtitle">Get In Touch</span>
+                <h2 class="section-title">Contact Me</h2>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info slide-in-left">
+                    <div class="contact-heading">
+                        <h3>Let's Talk About Your Project</h3>
+                        <p>I'm always open to discussing new projects, creative ideas or opportunities to be part of your vision.</p>
+                    </div>
+                    <div class="contact-details">
+                        <div class="contact-item fade-in delay-100">
+                            <div class="contact-icon">
+                                <i>📧</i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Email</h4>
+                                <p>theinvokerparamore@gmail.com</p>
+                            </div>
+                        </div>
+                        <div class="contact-item fade-in delay-200">
+                            <div class="contact-icon">
+                                <i>📱</i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Phone</h4>
+                                <p>+123 456 7890</p>
+                            </div>
+                        </div>
+                        <div class="contact-item fade-in delay-300">
+                            <div class="contact-icon">
+                                <i>📍</i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Location</h4>
+                                <p>Manila, Philippines</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="social-links fade-in delay-400">
+                        <a href="#" class="social-link">LinkedIn</a>
+                        <a href="#" class="social-link">GitHub</a>
+                        <a href="#" class="social-link">Twitter</a>
+                    </div>
+                </div>
+                <form id="contactForm" class="contact-form slide-in-right">
+                    <div class="form-group fade-in delay-100">
+                        <input type="text" id="name" name="name" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group fade-in delay-200">
+                        <input type="email" id="email" name="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group fade-in delay-300">
+                        <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" id="submitBtn" class="submit-btn fade-in delay-400">
+                        <span id="submitText">Send Message</span>
+                        <span id="loadingSpinner" class="loading-spinner" style="display: none;"></span>
+                    </button>
+                    <div id="toast" class="toast" style="display: none;">
+                        <div class="toast-content">
+                            <div id="toastTitle" class="toast-title"></div>
+                            <div id="toastDescription" class="toast-description"></div>
+                        </div>
+                        <button id="toastClose" class="toast-close">×</button>
+                    </div>
+                </form>
+            </div>
         </section>
     </main>
     
     <!-- Footer Component -->
-    <div id="footer-component"></div>
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2025 @joseph. All rights reserved.</p>
+        </div>
+    </footer>
     
-    <!-- JavaScript for loading components -->
+    <!-- JavaScript for animations and functionality -->
     <script>
-        // Function to load HTML components
-        function loadComponent(url, elementId) {
-            fetch(url)
-                .then(response => response.text())
-                .then(data => {
-                    document.getElementById(elementId).innerHTML = data;
-                });
-        }
-        
-        // Load all components when the page loads
         document.addEventListener('DOMContentLoaded', function() {
-            loadComponent('components/header.html', 'header-component');
-            loadComponent('components/home.html', 'home-component');
-            loadComponent('components/about.html', 'about-component');
-            loadComponent('components/project.html', 'project-component');
-            loadComponent('components/contact.html', 'contact-component');
-            loadComponent('components/footer.html', 'footer-component');
+            // Toggle mobile menu
+            const menuToggle = document.getElementById('menu-toggle');
+            const navLinks = document.getElementById('nav-links');
+            
+            menuToggle.addEventListener('click', function() {
+                navLinks.classList.toggle('active');
+                menuToggle.classList.toggle('active');
+            });
+            
+            // Add active class to current section
+            const navItems = document.querySelectorAll('.nav-item');
+            const sections = document.querySelectorAll('section');
+            
+            // Scroll animation function
+            const animateOnScroll = () => {
+                const elements = document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right, .scale-in');
+                
+                elements.forEach(element => {
+                    const elementPosition = element.getBoundingClientRect().top;
+                    const windowHeight = window.innerHeight;
+                    
+                    // If element is in viewport
+                    if (elementPosition < windowHeight - 100) {
+                        element.classList.add('active');
+                    }
+                });
+                
+                // Update active nav item
+                let current = '';
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.clientHeight;
+                    if(scrollY >= (sectionTop - 200)) {
+                        current = section.getAttribute('id');
+                    }
+                });
+                
+                navItems.forEach(item => {
+                    item.classList.remove('active');
+                    if(item.getAttribute('href').substring(1) === current) {
+                        item.classList.add('active');
+                    }
+                });
+            };
+            
+            // Run once on load
+            setTimeout(animateOnScroll, 100);
+            
+            // Add scroll event listener
+            window.addEventListener('scroll', animateOnScroll);
+            
+            // Contact form handling
+            const contactForm = document.getElementById('contactForm');
+            if (contactForm) {
+                const submitBtn = document.getElementById('submitBtn');
+                const submitText = document.getElementById('submitText');
+                const loadingSpinner = document.getElementById('loadingSpinner');
+                const toast = document.getElementById('toast');
+                const toastTitle = document.getElementById('toastTitle');
+                const toastDescription = document.getElementById('toastDescription');
+                const toastClose = document.getElementById('toastClose');
+                
+                // Form data state
+                let formData = {
+                    name: '',
+                    email: '',
+                    message: ''
+                };
+                
+                // Track submission state
+                let isSubmitting = false;
+                
+                // Toast function
+                function showToast({ title, description, variant = 'default' }) {
+                    toastTitle.textContent = title;
+                    toastDescription.textContent = description;
+                    toast.className = `toast ${variant}`;
+                    toast.style.display = 'flex';
+                    
+                    // Auto hide after 5 seconds
+                    setTimeout(() => {
+                        toast.style.display = 'none';
+                    }, 5000);
+                }
+                
+                // Close toast on click
+                toastClose.addEventListener('click', () => {
+                    toast.style.display = 'none';
+                });
+                
+                // Update form data on input
+                document.getElementById('name').addEventListener('input', (e) => {
+                    formData.name = e.target.value;
+                });
+                
+                document.getElementById('email').addEventListener('input', (e) => {
+                    formData.email = e.target.value;
+                });
+                
+                document.getElementById('message').addEventListener('input', (e) => {
+                    formData.message = e.target.value;
+                });
+                
+                // Form submission handler
+                contactForm.addEventListener('submit', async (e) => {
+                    e.preventDefault();
+                    
+                    if (!formData.name || !formData.email || !formData.message) {
+                        showToast({
+                            title: "Please fill in all fields",
+                            description: "All fields are required to submit the form.",
+                            variant: "destructive"
+                        });
+                        return;
+                    }
+                    
+                    isSubmitting = true;
+                    submitText.style.display = 'none';
+                    loadingSpinner.style.display = 'inline-block';
+                    submitBtn.disabled = true;
+                    
+                    try {
+                        // Replace this URL with your actual Formspree form ID
+                        const response = await fetch("https://formspree.io/f/", {
+                            method: "POST",
+                            headers: {
+                                "Content-Type": "application/json"
+                            },
+                            body: JSON.stringify({
+                                name: formData.name,
+                                email: formData.email,
+                                message: formData.message
+                            })
+                        });
+                        
+                        if (response.ok) {
+                            showToast({
+                                title: "Message sent!",
+                                description: "Thank you for your message. I'll get back to you soon."
+                            });
+                            // Reset form
+                            contactForm.reset();
+                            formData = {
+                                name: '',
+                                email: '',
+                                message: ''
+                            };
+                        } else {
+                            throw new Error("Failed to send message");
+                        }
+                    } catch (error) {
+                        showToast({
+                            title: "Failed to send message",
+                            description: "There was a problem sending your message. Please try again later.",
+                            variant: "destructive"
+                        });
+                        console.error("Error sending message:", error);
+                    } finally {
+                        isSubmitting = false;
+                        submitText.style.display = 'inline-block';
+                        loadingSpinner.style.display = 'none';
+                        submitBtn.disabled = false;
+                    }
+                });
+            }
         });
     </script>
 </body>
